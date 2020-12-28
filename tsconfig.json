@@ -6,6 +6,7 @@
     "isolatedModules": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "jsx": "preserve",
     "strict": true
   },
   "include": ["./src/**/*"]
