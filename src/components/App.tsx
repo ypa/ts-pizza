@@ -7,7 +7,10 @@ import PizzaSVG from '../svg/pizza.svg';
 const App = () => {
   return (
     <div className={AppCSS.container}>
-      <PizzaSVG width={120} height={120} />
+      <div className={AppCSS.header}>
+        <PizzaSVG width={120} height={120} />
+        <div className={AppCSS.siteTitle}>Delicious Pizza</div>
+      </div>
       <ul>
         { pizzas.map(pizza => {
           return <Pizza key={pizza.id} pizza={pizza} />
