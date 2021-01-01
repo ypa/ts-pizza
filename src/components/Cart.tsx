@@ -1,5 +1,4 @@
 import React from 'react';
-import { ProgressPlugin } from 'webpack';
 import CartCSS from './Cart.module.css';
 
 interface Props {}
