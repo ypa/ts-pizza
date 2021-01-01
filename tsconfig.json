@@ -10,6 +10,7 @@
     // "sourceMap": true,  // if for using ts-loader instead of babel-loader
     "resolveJsonModule": true,
     "moduleResolution": "Node",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "strict": true
   },
   "include": ["./src/**/*"]
