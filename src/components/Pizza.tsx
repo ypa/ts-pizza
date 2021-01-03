@@ -1,16 +1,10 @@
 import React, { useContext } from 'react';
 import PizzaCSS from './Pizza.module.css'
-import {AppDispatchContext, useStateDispatch} from './AppState';
-
-interface Pizza {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-}
+import { AppDispatchContext, useStateDispatch } from './AppState';
+import { Pizza as PizzaType } from '../types'
 
 interface Props {
-  pizza: Pizza;
+  pizza: PizzaType;
 }
 
 const Pizza: React.FC<Props> = ({ pizza }) => {
@@ -19,7 +13,7 @@ const Pizza: React.FC<Props> = ({ pizza }) => {
     dispatch({
       type: 'ADD_TO_CART',
       payload: {
-        item: {id: pizza.id, name: pizza.name, price: pizza.price }
+        item: { id: pizza.id, name: pizza.name, price: pizza.price }
       }
     })
   }
