@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import PizzaCSS from './Pizza.module.css'
 import { Pizza as PizzaType } from '../types'
-import { AddToCartProps, withAddToCart } from './AddToCart';
+import { useAddToCart } from './AddToCart';
 
-interface Props extends AddToCartProps {
+interface Props {
   pizza: PizzaType;
 }
 
-const Pizza: React.FC<Props> = ({ pizza, addToCart }) => {
+const Pizza: React.FC<Props> = ({ pizza }) => {
+  const addToCart = useAddToCart();
   const handleAddToCartClick = () => {
     addToCart({ id: pizza.id, name: pizza.name, price: pizza.price });
   }
@@ -20,4 +21,4 @@ const Pizza: React.FC<Props> = ({ pizza, addToCart }) => {
   </li>;
 };
 
-export default withAddToCart(Pizza);
+export default Pizza;
