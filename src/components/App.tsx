@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import pizzas from '../data/pizzas.json';
 import Pizza from './Pizza';
 import Cart from './Cart';
@@ -9,6 +9,21 @@ import SpecialOffer from './SpecialOffer';
 
 const App = () => {
   const specialOfferPizza = pizzas.find((pizza) => pizza.specialOffer);
+
+  // Demo of how to use useEffect in functional components to do life cycle hooks
+  /*
+  useEffect(() => {
+    const listener = () => {
+      alert('Hello');
+    };
+    document.addEventListener('mousedown', listener);
+
+    // clean up code ala componentWillUnmount callback
+    return () => {
+      document.removeEventListener('mousedown', listener);
+    };
+  }, []);
+  */
 
   return (
     <AppStateProvider>
